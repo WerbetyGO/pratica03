@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consultas Agendadas</title>
+</head>
+<body>
+    <h1>Consultas Agendadas</h1>
+    <ul>
+        {% for consulta in consultas %}
+        <li>
+            <strong>{{ consulta['nome'] }}</strong>
+            - Data: {{ consulta['data'] }}, Horário: {{ consulta['horario'] }}
+            <a href="/editar/{{ loop.index0 }}">Editar</a>
+            <a href="/cancelar/{{ loop.index0 }}">Cancelar</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
